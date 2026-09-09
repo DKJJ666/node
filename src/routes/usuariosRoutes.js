@@ -15,7 +15,7 @@ import autorizar from "../middleware/autorizar.js";
 
 const router = Router()
 
-router.post("/usuarios/login", login)
+router.post("/login", login)
 
 router.get("/", autenticar, autorizar("funcionario"), listarUsuarios)
 router.get("/id", autenticar, autorizar("funcionario"), buscaUsuario)
