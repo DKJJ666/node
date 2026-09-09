@@ -1,12 +1,17 @@
 // Start library express
 import "dotenv/config"
 import express from "express"
-
-
+import cors from "cors"
 import livroRoutes from "./routes/livrosRoutes.js"
 import usuarioRoutes from "./routes/usuariosRoutes.js"
 
+
+
 const app = express()
+app.use(cors({
+    origin: "http://localhost:5173",
+    credentials: true
+}))
 
 app.use(express.json())
 
@@ -14,14 +19,6 @@ app.use("/livros", livroRoutes)
 app.use("/usuarios", usuarioRoutes)
 
 export default app
-
-
-
-
-
-
-
-
 
 
 

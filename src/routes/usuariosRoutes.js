@@ -18,10 +18,10 @@ const router = Router()
 router.post("/usuarios/login", login)
 
 router.get("/", autenticar, autorizar("funcionario"), listarUsuarios)
-router.get("/usuarios/:id", autenticar, autorizar("funcionario"), buscaUsuario)
+router.get("/id", autenticar, autorizar("funcionario"), buscaUsuario)
 router.post("/usuarios", autenticar, autorizar("funcionario"), adicionarUsuario)
-router.put("/usuarios/:id", autenticar, autorizar("funcionario"), atualizarUsuario)
-router.patch("/usuarios/:id/senha", autenticar, autorizar("funcionario"), atualizarDados)
-router.delete("/usuarios/:id", autenticar, autorizar("funcionario"), excluirUsuario)
+router.put("/:id", autenticar, autorizar("funcionario"), atualizarUsuario)
+router.patch("/:id/senha", autenticar, autorizar("funcionario"), atualizarDados)
+router.delete("/:id", autenticar, autorizar("funcionario"), excluirUsuario)
 
 export default router
