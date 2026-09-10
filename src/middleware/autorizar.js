@@ -17,7 +17,7 @@ const autorizar = (...perfisPermitidos ) => {
             })
         }
 
-        if(!perfisPermitidos.includes(perfilUsuario)){
+        if(!permitidos.includes(perfilUsuario)){
             return res.status(403).json({
                 message: "Você nâo tem perimssão para realizar essa ação. Contate o ADM"
             })
